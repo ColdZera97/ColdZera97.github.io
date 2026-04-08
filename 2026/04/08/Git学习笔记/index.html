@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>小鱼儿的故乡 | 小鱼儿的故乡</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="远程仓库https:&#x2F;&#x2F;github.com&#x2F;ColdZera97&#x2F;Rearview_Camera.git 1 总体学习结构github 版本控制 Git 简介 Git 命令执行 Gitlab服务器环境搭建（暂不学） Git 图形化界面操作（暂不学） 2 Github 的版本控制2.1 为什么需要版本控制版本控制方便查询历史操作方便多人协作历史备份具有权限控制功能2.2 版本控制介绍2.2.1 版">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小鱼儿的故乡">
+<meta property="og:url" content="http://example.com/2026/04/08/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="小鱼儿的故乡">
+<meta property="og:description" content="远程仓库https:&#x2F;&#x2F;github.com&#x2F;ColdZera97&#x2F;Rearview_Camera.git 1 总体学习结构github 版本控制 Git 简介 Git 命令执行 Gitlab服务器环境搭建（暂不学） Git 图形化界面操作（暂不学） 2 Github 的版本控制2.1 为什么需要版本控制版本控制方便查询历史操作方便多人协作历史备份具有权限控制功能2.2 版本控制介绍2.2.1 版">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-04-08T11:44:06.270Z">
+<meta property="article:modified_time" content="2025-06-26T06:30:33.596Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++ Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "http://example.com/2026/04/08/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2026-04-08T11:44:06.270Z",
+  "dateModified": "2025-06-26T06:30:33.596Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "John Doe",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/04/08/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '小鱼儿的故乡',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">小鱼儿的故乡</span></a><a class="nav-page-title" href="/"><span class="site-name">小鱼儿的故乡</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-04-08T11:44:06.270Z" title="Created 2026-04-08 19:44:06">2026-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-06-26T06:30:33.596Z" title="Updated 2025-06-26 14:30:33">2025-06-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>远程仓库<a target="_blank" rel="noopener" href="https://github.com/ColdZera97/Rearview_Camera.git">https://github.com/ColdZera97/Rearview_Camera.git</a></p>
+<p>1 总体学习结构<br>github 版本控制</p>
+<p>Git 简介</p>
+<p>Git 命令执行</p>
+<p>Gitlab服务器环境搭建（暂不学）</p>
+<p>Git 图形化界面操作（暂不学）</p>
+<p>2 Github 的版本控制<br>2.1 为什么需要版本控制<br>版本控制方便查询历史操作<br>方便多人协作<br>历史备份<br>具有权限控制功能<br>2.2 版本控制介绍<br>2.2.1 版本控制方式<br>SVN选择增量式版本管理方式，Git选择文件系统快照形式</p>
+<p>2.2.2 版本控制工具<br>集中式：SVN，CVS（存在一台服务器中心控制，缺点：中心控制的服务器很重要）<br>分布式：Github（优势：防止中心服务器单点故障）<br>3 Git 简介<br>3.1 Git 优势<br>操作可在本地完成，不需联网<br>完整性保证（hash控制文件完整性，防止文件传输过程中丢失）<br>尽可能添加数据而不是删除或修改数据<br>分支操作快捷流畅<br>与Linux命令全面兼容<br>3.2 Git 程序安装过程<br>Adjusting your Path environment根据情况选择，希望使用command line操作Github的最好选择“Use Git from the Windows Command Prompt”，此为目前系统推荐</p>
+<p>3.3 Git 结构介绍<br>工作区（写代码）、暂存区（临时储存）、本地库（历史版本）</p>
+<p>3.4 Git和代码托管中心（任务：维护远程库）<br>3.4.1 局域网环境下<br>GitLab服务器</p>
+<p>3.4.2 外网环境下<br>GitHub，码云（中国国内访问较快）</p>
+<p>3.4.3 本地库和远程库：</p>
+<ol>
+<li><p>团队内部协作</p>
+</li>
+<li><p>跨团队协作</p>
+</li>
+</ol>
+<p>4 Git 命令行操作<br>4.1 本地库操作<br>4.1.1 git bash<br>Windows可以进入git bash界面写linux code进行操作</p>
+<p>4.1.2 git init 本地库初始化</p>
+<ol>
+<li><p>进入 repository directory</p>
+</li>
+<li><p>git init（初始化）</p>
+</li>
+</ol>
+<p>结果显示 initialized empty Git repository in D:&#x2F;your&#x2F;path</p>
+<ol start="3">
+<li>command line:</li>
+</ol>
+<p>a. ls -lA（查看该目录下所有文件，包含隐藏文件）</p>
+<p>b. ls -lG（查看该目录下所有文件，不包含隐藏文件）</p>
+<ol start="4">
+<li>进行git init之后current directory下会出现 .git&#x2F; 文件夹，其中包含 config, description, HEAD等相关文件，不要删除，也不要随意修改。</li>
+</ol>
+<p>4.1.3 设置签名</p>
+<ol>
+<li>形式</li>
+</ol>
+<p>用户名：tom<br>Email address: <a href="mailto:&#103;&#x6f;&#111;&#100;&#x4d;&#x6f;&#114;&#110;&#x69;&#x6e;&#x67;&#64;&#97;&#x74;&#103;&#117;&#105;&#103;&#117;&#46;&#99;&#x6f;&#x6d;">&#103;&#x6f;&#111;&#100;&#x4d;&#x6f;&#114;&#110;&#x69;&#x6e;&#x67;&#64;&#97;&#x74;&#103;&#117;&#105;&#103;&#117;&#46;&#99;&#x6f;&#x6d;</a>（用户名与email没有直接联系）<br>2. 作用：区分不同开发人员身份</p>
+<ol start="3">
+<li><p>注意：此本地库设置的签名与登录远程库（代码托管中心）的账号、密码没有任何关系。</p>
+</li>
+<li><p>命令：</p>
+</li>
+</ol>
+<p>git config user.name tom（项目级别&#x2F;仓库级别签名）<br>git config user.email <a href="mailto:&#103;&#x6f;&#111;&#100;&#77;&#x6f;&#x72;&#x6e;&#105;&#x6e;&#x67;&#64;&#x61;&#x74;&#103;&#117;&#x69;&#x67;&#x75;&#46;&#x63;&#111;&#109;">&#103;&#x6f;&#111;&#100;&#77;&#x6f;&#x72;&#x6e;&#105;&#x6e;&#x67;&#64;&#x61;&#x74;&#103;&#117;&#x69;&#x67;&#x75;&#46;&#x63;&#111;&#109;</a>（项目级别&#x2F;仓库级别签名）<br>git config –global user.name tom（系统用户级别签名）<br>git config –global user.email <a href="mailto:&#103;&#x6f;&#111;&#100;&#x4d;&#111;&#114;&#110;&#105;&#110;&#103;&#64;&#x61;&#116;&#x67;&#x75;&#105;&#x67;&#x75;&#x2e;&#99;&#111;&#x6d;">&#103;&#x6f;&#111;&#100;&#x4d;&#111;&#114;&#110;&#105;&#110;&#103;&#64;&#x61;&#116;&#x67;&#x75;&#105;&#x67;&#x75;&#x2e;&#99;&#111;&#x6d;</a>（系统用户级别签名）<br>5. 签名级别规则</p>
+<p>项目级别&#x2F;仓库级别：仅在当前本地库范围内有效<br>使用命令后信息储存位置：本地库&#x2F;.git&#x2F;config<br>系统用户级别：登录当前操作系统的用户范围（例如，登录Windows系统的用户名）<br>使用命令后信息储存位置：用户家目录下~&#x2F;.gitconfig<br>级别优先级：就近原则（项目级别优先于系统用户级别，二者都有时采用项目级别；<br>4.1.4 添加提交和检查状态命令<br>git status检查当前local repository下文件状态：查看工作区、暂存区状态<br>vim编辑器comand<br>进入vim编辑器页面后→“:set nu”可以显示行号，“i”键进入编辑模式<br>git add [file name] 添加操作：将工作区的“新建&#x2F;修改”添加到暂存区<br>git commit - m “commit message” [file name] 提交操作：将暂存区的内容提交到本地库<br>4.1.5 版本穿梭</p>
+<ol>
+<li>git log: 可以看到所有版本更新记录</li>
+</ol>
+<p>a. 多屏显示控制方式</p>
+<p>空格向下翻页<br>b向上翻页<br>q退出<br>b. git log –pretty&#x3D;oneline 更漂亮的形式显示</p>
+<p>c. git log –oneline 中hash值只显示一部分，看起来更清洁</p>
+<p>d. git reflog 中多了HEAD@{num}，num为移动到当前版本需要的步数</p>
+<ol start="2">
+<li>前进后退历史版本</li>
+</ol>
+<p>a. 分类</p>
+<p>基于索引值操作即上一步提到的“HEAD”（推荐）：git reset –hard 9a9ebe0，其中9a9ebe0为局部索引值<br>使用^符号：只能后退<br>git reset –hard HEAD^，一个^退一个版本<br>git reset –hard HEAD^^退两个版本，以此类推<br>使用<del>符号：只能后退<br>git reset –hard HEAD</del>3，退后3个版本<br>b. Git文档查看tips：git help reset，help后面加要查看的命令</p>
+<p>c. reset命令的三个参数对比（–hard，–soft，–mixed）</p>
+<p>–soft：仅仅在本地库移动HEAD指针<br>–mixed：在本地库移动HEAD指针，重置暂存区<br>–hard：在本地库移动HEAD指针，重置暂存区，重置工作区 （一般推荐使用 hard，因为hard使本地库、暂存区、工作区保持一致）<br>3. 删除文件并找回</p>
+<p>a. 前提：删除前，文件存在时的状态提交到了本地库</p>
+<p>b. 操作：git reset –hard HEAD或者git reset –hard [指针位置]</p>
+<p>指针位置：历史记录或当前位置<br>若删除操作已经提交到本地库：指针位置为历史记录<br>若删除操作未提交到本地库：指针位置为当前版本位置<br>4. 比较文件差异</p>
+<p>a. git diff [文件名]</p>
+<pre><code>将工作区中的文件和暂存区进行比较
+</code></pre>
+<p>b. git diff [本地库中历史版本][文件名]，eg. git diff HEAD^ apple.txt</p>
+<pre><code>将工作区中的文件和本地库历史记录比较
+</code></pre>
+<p>c. 不带文件名则比较多个文件</p>
+<p>4.1.6 分支管理</p>
+<ol>
+<li>什么是分支？</li>
+</ol>
+<p>在版本控制过程中，使用多条线同时推进多个任务。</p>
+<ol start="2">
+<li>分支的好处</li>
+</ol>
+<p>a. 同时并行推进多个功能，提高开发效率</p>
+<p>b. 各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支有任何影响</p>
+<ol start="3">
+<li>分支操作</li>
+</ol>
+<p>a. 创建分支 git branch [分支名]</p>
+<p>b. 查看分支 git branch -v</p>
+<p>c. 切换分支 git checkout [分支名]</p>
+<p>d. 合并分支</p>
+<p>第一步：切换到接受修改的分支上（被合并的分支）<br>git checkout [被合并分支名]<br>第二步：执行 merge 命令<br>git merge [有新内容分支名]<br>e. 解决冲突</p>
+<p>例：如下命令尝试把 master中的修改合并至hot_fix分支</p>
+<p>冲突的表现</p>
+<p>冲突的解决<br>第一步：手动编辑冲突文件，删除特殊符号<br>第二步：把文件修改到满意的程度，保持退出<br>第三步：git add [文件名]<br>第四步：git commit - m “日志信息”<br>注意：此处 commit 后面一定不能带具体文件名<br>4.1.7 Git 的基本原理</p>
+<ol>
+<li>哈希（SHA）</li>
+</ol>
+<p>哈希是一个系统的加密算法，各个不同的哈希算法虽然加密程度不同，但是有以下几个共同点：</p>
+<p>不管输入数据的数据量有多大，输入同一个哈希算法，得到的加密结果长度固定。<br>哈希算法确定，输入数据确定，输出数据能够保证不变<br>哈希算法确定，输入数据有变化，输出数据一定有变化，而且通常变化很大<br>哈希算法不可逆<br>Git 底层采用的是 SHA-1 算法。</p>
+<p>根据哈希算法的特性，哈希算法可以被用来验证文件一致性，原理如下图：</p>
+<ol start="2">
+<li>Git 保存版本的机制</li>
+</ol>
+<p>a. 集中式版本控制工具的文件管理机制</p>
+<p>以文件变更列表的方式储存信息。这类系统将他们保存的信息看作是一组基本文件和每个文件随时间逐步累积的差异。</p>
+<p>b. Git 的文件管理机制</p>
+<p>Git 把数据看成是小型文件系统的一组快照。每次提交更新时，Git都会对当前的全部文件制作一个快照并保存这个快照的索引。为了高效，如果文件没有修改，Git 不再重新储存该文件，而只是保留一个链接指向之前存储的文件。</p>
+<p>细节如下：</p>
+<ol start="3">
+<li>Git 分支管理</li>
+</ol>
+<p>a. Git 分支的操作只在于切换 HEAD 指针的位置</p>
+<p>b. 如下图</p>
+<p>4.2 Github远程库<br>4.2.1 GitHub账号<br><a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a> 注册</p>
+<p>4.2.2 创建远程库</p>
+<ol>
+<li><p>前提：已创建本地库（git init -&gt; git add . -&gt; git commit -m “add file”）</p>
+</li>
+<li><p>创建新的远程库（create a new repository）</p>
+</li>
+</ol>
+<p>4.2.3 在本地创建远程库地址别名</p>
+<ol>
+<li><p>git remote -v 查看已设定的远程库地址别名</p>
+</li>
+<li><p>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/%7B$username%7D/%7B$repository_name%7D.git%EF%BC%88$username">https://github.com/{$username}/{$repository_name}.git（$username</a> and $repository_name needs to be replaced by your username and repository name, drop {}.）</p>
+</li>
+<li><p>git remote remove origin url 删除已设定的远程库地址别名</p>
+</li>
+<li><p>git remote set-url origin url 这将修改当前仓库中origin的URL为新的URL<br>4.2.4 推送操作<br>git push origin master （master代表推送的分支）</p>
+</li>
+</ol>
+<p>4.2.5 克隆操作</p>
+<ol>
+<li><p>命令：git clone <a target="_blank" rel="noopener" href="https://github.com/atguigu2018ybuq/huashan.git">https://github.com/atguigu2018ybuq/huashan.git</a></p>
+</li>
+<li><p>git clone命令的三个效果：</p>
+</li>
+</ol>
+<p>a. 完整地把远程库下载到本地</p>
+<p>b. 创建origin远程地址别名</p>
+<p>c. 初始化本地库</p>
+<p>4.2.6 邀请他人加入团队<br>进入github页面的repository主页，点击settings，找到Collaborators，加入他人账号</p>
+<p>4.2.7 远程库修改的拉取（pull命令）<br>pull是fetch和merge的结合</p>
+<ol>
+<li><p>git fetch [远程库地址别名] [远程分支名], e.g. git fetch origin master 进行抓取操作。注意：该操作完成后本地文件并没有发生变化。</p>
+</li>
+<li><p>git merge [远程库地址别名&#x2F;远程分支名] ，例如：git merge origin&#x2F;master</p>
+</li>
+<li><p>git pull [远程库地址别名] [远程分支名]</p>
+</li>
+</ol>
+<p>4.2.8 协同开发时冲突的解决</p>
+<ol>
+<li><p>如果不是基于Github远程库的最新版所做的修改，不能被推送，必须先拉取。</p>
+</li>
+<li><p>拉取下来后如果进入冲突状态（conflict），则按照“分支冲突解决”进行操作即可（见4.1.6分支管理）。</p>
+</li>
+</ol>
+<p>4.2.9 跨团队协作</p>
+<ol>
+<li><p>github repository主页选择fork</p>
+</li>
+<li><p>git clone fork后的repository到本地</p>
+</li>
+<li><p>进行本地修改，然后推送到远程库</p>
+</li>
+<li><p>进行 pull request -&gt; New pull request -&gt; create pull request</p>
+</li>
+<li><p>另一边被fork的一方会收到pull request提示，审核代码 -&gt; merge pull request 进行合并</p>
+</li>
+<li><p>将远程库内容拉取到本地库</p>
+</li>
+</ol>
+<p>4.2.10 SSH登录</p>
+<ol>
+<li><p>进入当前用户的根目录</p>
+<p> $ cd ~</p>
+</li>
+<li><p>删除.ssh 目录</p>
+<p> $ rm -rvf .ssh</p>
+</li>
+<li><p>运行命令生成.ssh密钥目录</p>
+<p> $ ssh-keygen -t rsa -C <a href="mailto:&#97;&#116;&#103;&#x75;&#x69;&#x67;&#x75;&#50;&#48;&#x31;&#56;&#121;&#x62;&#117;&#x71;&#x40;&#97;&#108;&#105;&#x79;&#117;&#110;&#46;&#99;&#111;&#x6d;">&#97;&#116;&#103;&#x75;&#x69;&#x67;&#x75;&#50;&#48;&#x31;&#56;&#121;&#x62;&#117;&#x71;&#x40;&#97;&#108;&#105;&#x79;&#117;&#110;&#46;&#99;&#111;&#x6d;</a></p>
+<p> 注意：这里的-C必须是大写的C</p>
+</li>
+<li><p>进入.ssh目录查看文件列表</p>
+<p> $ cd .ssh</p>
+<p> $ ls -lF</p>
+</li>
+<li><p>查看 id_rsa.pub 文件内容</p>
+<p> $ cat id_rsa.pub</p>
+</li>
+<li><p>复制 id_rsa.pub 文件内容，登录 Github，点击用户头像→Settings→SSH and GPG keys</p>
+</li>
+<li><p>New SSH Key</p>
+</li>
+<li><p>输入复制的密钥信息</p>
+</li>
+<li><p>回到Git bash创建远程地址别名</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2026/04/08/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2026/04/08/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/04/08/CMake%E5%AE%9E%E8%B7%B5/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2"></div></div><div class="info-2"><div class="info-item-1">一、初试cmake - cmake的Hello World12345678910project(HELLO) # 隐式地定义了两个变量:&lt;projectname&gt;_BINARY_DIR, &lt;projectname&gt;_SOURCE_DIR。 # cmake系统也预定义了PROJECT_BINARY_DIR, PROJECT_SOURCE_DIR，值与上述一样。为了统一，推荐使用系统预定义变量。# 若为内部编译，上述变量值皆为CMakeLists.txt所在路径；若为外部编译，*_BINARY_DIR的值为外部编辑所在路径（编译路径），*_SOURCE_DIR的值为CMakeLists.txt所在路径（工程路径）。set(SRC_LIST main.cpp) # set(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]]) # message([SEND_ERROR|STATUS|FATAL_ERROR] &quot;message to display&quot; ...)message(STATUS &quot;This ...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description">江山雾笼烟雨摇，十年一剑斩皇朝！</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Untitled">Untitled</a><time datetime="2026-04-08T11:44:06.270Z" title="Created 2026-04-08 19:44:06">2026-04-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/CMake%E5%AE%9E%E8%B7%B5/" title="Untitled">Untitled</a><time datetime="2026-04-08T11:44:01.140Z" title="Created 2026-04-08 19:44:01">2026-04-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/c++%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" title="Untitled">Untitled</a><time datetime="2026-04-08T11:38:27.157Z" title="Created 2026-04-08 19:38:27">2026-04-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/hello-world/" title="Hello World">Hello World</a><time datetime="2026-04-08T08:17:50.398Z" title="Created 2026-04-08 16:17:50">2026-04-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/12/29/C++%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" title="C++基础入门 笔记">C++基础入门 笔记</a><time datetime="2021-12-28T16:00:00.000Z" title="Created 2021-12-29 00:00:00">2021-12-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
